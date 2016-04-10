@@ -1,0 +1,22 @@
+---
+
+- include: debian.yml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- include: redhat.yml
+  when: ansible_os_family == "RedHat" or ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Install ooniprobe via pip
+  pip: name="{{ item.n }}" version="{{ item.v }}" state=present
+  with_items:
+    - { n: pyasn1, v: 0.1.9 }
+
+- name: Install ooniprobe via pip
+  pip: name="{{ item }}" state=present
+  with_items:
+    - ooniprobe
+
+- cron: name="run-ooniprobe" special_time=daily
+        user="nobody" job="ooniprobe $THE_OONI_COMMAND"
+  when: ooniprobe_with_cron is defined and ooniprobe_with_cron
+

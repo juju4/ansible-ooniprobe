@@ -1,0 +1,17 @@
+---
+
+- name: yum | ooniprobe dependencies install
+  yum: name="{{item}}" state=present
+  with_items:
+    - "@Development tools"
+    - python-pip
+    - python-devel
+    - GeoIP-devel
+    - libdnet-devel
+    - libpcap-devel
+    - openssl-devel
+    - libffi-devel
+    - tor
+
+- name: start and enable tor service
+  service: name=tor state=started enabled=yes
