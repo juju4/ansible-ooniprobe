@@ -12,6 +12,7 @@
     - openssl-devel
     - libffi-devel
     - tor
+    - crontabs
 
 - name: start and enable tor service
   service: name=tor state=started enabled=yes

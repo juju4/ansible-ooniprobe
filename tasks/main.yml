@@ -6,7 +6,7 @@
 - include: redhat.yml
   when: ansible_os_family == "RedHat" or ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- name: Install ooniprobe via pip
+- name: Install pyasn1 via pip
   pip: name="{{ item.n }}" version="{{ item.v }}" state=present
   with_items:
     - { n: pyasn1, v: 0.1.9 }
@@ -16,7 +16,9 @@
   with_items:
     - ooniprobe
 
-- cron: name="run-ooniprobe" special_time=daily
+## centos7 fail: https://github.com/ansible/ansible-modules-core/issues/5109
+- name: add daily task to run ooniprobe
+  cron: name="run-ooniprobe" special_time=daily
         user="nobody" job="ooniprobe $THE_OONI_COMMAND"
   when: ooniprobe_with_cron is defined and ooniprobe_with_cron
 

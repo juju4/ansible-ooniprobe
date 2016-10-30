@@ -50,6 +50,12 @@ $ vagrant ssh
 
 ## Troubleshooting & Known issues
 
+* centos execution fails on cron module: fix in ansible 2.2.0
+```
+elif os.getlogin() != self.user:\nOSError: [Errno 25] Inappropriate ioctl for device\n
+```
+https://github.com/ansible/ansible-modules-core/pull/4777
+
 
 ## License
 
