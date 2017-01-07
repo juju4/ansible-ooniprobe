@@ -5,5 +5,5 @@
 #  vars:
 #    - a:
   roles:
-    - ooniprobe
+    - juju4.ooniprobe
 
