@@ -10,6 +10,7 @@
   pip: name="{{ item.n }}" version="{{ item.v }}" state=present
   with_items:
     - { n: pyasn1, v: 0.1.9 }
+    - { n: setuptools, v: 34.0.0 }
 
 - name: Install ooniprobe via pip
   pip: name="{{ item }}" state=present
