@@ -7,9 +7,7 @@
 #
 
 @test "Second run should change nothing" {
-    if [ X`lsb_release -rs 2>&1` == 'X14.04' ]; then
-      skip "ubuntu trusty not idempotent - ansible pip module pyasn1/ooniprobe"
-    fi
+    skip "ubuntu not idempotent - ansible pip module pyasn1 or pip"
     run bash -c "ansible-playbook -i /tmp/kitchen/hosts /tmp/kitchen/default.yml -c local | tee /tmp/idempotency.test | grep -q 'changed=0.*failed=0' && exit 0 || exit 1"
     [ "$status" -eq 0 ]
 }
