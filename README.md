@@ -11,6 +11,7 @@ https://github.com/thetorproject/ooni-probe
 It was tested on the following versions:
  * 1.9
  * 2.0
+ * 2.2
 
 ### Operating systems
 
@@ -24,7 +25,7 @@ For example
 ```
 - host: all
   roles:
-    - ooniprobe
+    - juju4.ooniprobe
 ```
 
 ## Variables
@@ -37,13 +38,13 @@ This role has a travis basic test (for github), more advanced with kitchen and a
 
 Once you ensured all necessary roles are present, You can test with:
 ```
-$ cd /path/to/roles/ooniprobe
+$ cd /path/to/roles/juju4.ooniprobe
 $ kitchen verify
 $ kitchen login
 ```
 or
 ```
-$ cd /path/to/roles/ooniprobe/test/vagrant
+$ cd /path/to/roles/juju4.ooniprobe/test/vagrant
 $ vagrant up
 $ vagrant ssh
 ```
