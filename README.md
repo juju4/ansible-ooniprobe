@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/juju4/ansible-ooniprobe.svg?branch=master)](https://travis-ci.org/juju4/ansible-ooniprobe)
+[![Build Status - Master](https://travis-ci.org/juju4/ansible-ooniprobe.svg?branch=master)](https://travis-ci.org/juju4/ansible-ooniprobe)
+[![Build Status - Devel](https://travis-ci.org/juju4/ansible-ooniprobe.svg?branch=devel)](https://travis-ci.org/juju4/ansible-ooniprobe/branches)
 # ooniprobe ansible role
 
 A simple ansible role to setup ooniprobe, network measurement writing framework aimed at detecting network interference.
