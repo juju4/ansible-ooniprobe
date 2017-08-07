@@ -25,7 +25,7 @@ env:
 #    init: /sbin/init
 #    run_opts: ""
 #  - distribution: alpine
-#    version: 3.4
+#    version: 3.6
 #    init: /sbin/init
 #    run_opts: ""
 #  - distro: debian8
@@ -75,6 +75,10 @@ script:
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'
 
+after_failure:
+  # Check what happened on systemd systems.
+  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm systemctl -l status'
+  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm journalctl -xe --no-pager'
+
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
-
