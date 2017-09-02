@@ -1,5 +1,15 @@
 ---
 
+- name: Include version-specific variables for Debian/Ubuntu.
+  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+  when: ansible_os_family == 'Debian'
+- name: Include version-specific variables for RedHat
+  include_vars: "RedHat-{{ ansible_distribution_version.split('.')[0] }}.yml"
+  when: ansible_os_family == "RedHat"
+- name: Include version-specific variables for Alpine
+  include_vars: "Alpine.yml"
+  when: ansible_os_family == "Alpine"
+
 - include: debian.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
