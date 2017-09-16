@@ -21,7 +21,7 @@
 - name: Install pyasn1 via pip
   pip: name="{{ item.n }}" version="{{ item.v }}" state=present
   with_items:
-    - { n: pyasn1, v: 0.3.3 }
+    - { n: pyasn1, v: 0.3.4 }
     - { n: pip, v: 9.0.1 }
 - name: Trusty | Install recent setuptools via pip
   pip: name="{{ item.n }}" version="{{ item.v }}" state=present
