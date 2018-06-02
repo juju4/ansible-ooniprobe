@@ -1,0 +1,7 @@
+---
+
+python_sni:
+    - python-dev
+    - python-pip
+    - libffi-dev
+    - libssl-dev
