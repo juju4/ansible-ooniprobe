@@ -39,4 +39,3 @@
   cron: name="run-ooniprobe" special_time=daily
         user="nobody" job="ooniprobe $THE_OONI_COMMAND"
   when: ooniprobe_with_cron is defined and ooniprobe_with_cron
-
