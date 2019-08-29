@@ -19,20 +19,22 @@
 - include: python-sni-workaround.yml
 
 - name: Install pyasn1 via pip
-  pip: name="{{ item.n }}" version="{{ item.v }}" state=present
+  pip:
+    name: "{{ item.n }}"
+    version: "{{ item.v }}"
+    state: present
   with_items:
-    - { n: pyasn1, v: 0.4.2 }
+    - { n: pyasn1, v: 0.4.6 }
     - { n: pip, v: 9.0.1 }
 - name: Trusty | Install recent setuptools via pip
-  pip: name="{{ item.n }}" version="{{ item.v }}" state=present
-  with_items:
-    - { n: setuptools, v: 34.0.0 }
+  pip:
+    name: setuptools
+    version: 34.0.0
+    state: present
   when: ansible_distribution_release == 'trusty'
 
 - name: Install ooniprobe via pip
-  pip: name="{{ item }}" state=present
-  with_items:
-    - ooniprobe
+  pip: name=ooniprobe state=present
 
 ## centos7 fail: https://github.com/ansible/ansible-modules-core/issues/5109
 - name: add daily task to run ooniprobe
