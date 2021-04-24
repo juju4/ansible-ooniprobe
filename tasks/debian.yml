@@ -4,8 +4,8 @@
   apt:
     name:
       - build-essential
-      - python-pip
-      - python-dev
+      - python3-pip
+      - python3-dev
       - libgeoip-dev
       - libdumbnet-dev
       - libpcap-dev

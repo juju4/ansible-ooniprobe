@@ -23,6 +23,7 @@
     name: "{{ item.n }}"
     version: "{{ item.v }}"
     state: present
+    executable: "{{ ooniprobe_python_pip | default('pip3') }}"
   with_items:
     - { n: pyasn1, v: 0.4.6 }
     - { n: pip, v: 9.0.1 }

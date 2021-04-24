@@ -1,0 +1,8 @@
+---
+
+python_sni:
+    - platform-python-devel
+    - python3-pip
+    - libffi-devel
+    - openssl-devel
+    - gcc

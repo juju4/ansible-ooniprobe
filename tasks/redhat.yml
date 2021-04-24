@@ -4,8 +4,8 @@
   yum:
     name:
       - "@Development tools"
-      - python-pip
-      - python-devel
+      - python3-pip
+      - python3-devel
       - GeoIP-devel
       - libdnet-devel
       - libpcap-devel
