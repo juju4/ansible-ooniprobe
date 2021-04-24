@@ -1,10 +1,14 @@
 [![Build Status - Master](https://travis-ci.org/juju4/ansible-ooniprobe.svg?branch=master)](https://travis-ci.org/juju4/ansible-ooniprobe)
 [![Build Status - Devel](https://travis-ci.org/juju4/ansible-ooniprobe.svg?branch=devel)](https://travis-ci.org/juju4/ansible-ooniprobe/branches)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+# DEPRECATED/UNMAINTAINED -> archived like upstream project, please use https://github.com/ooni/probe-cli
+
 # ooniprobe ansible role
 
 A simple ansible role to setup ooniprobe, network measurement writing framework aimed at detecting network interference.
-https://ooni.torproject.org
-https://github.com/thetorproject/ooni-probe
+* https://ooni.torproject.org
+* https://github.com/thetorproject/ooni-probe
+* https://github.com/ooni/probe-legacy
 
 ## Requirements & Dependencies
 
@@ -59,6 +63,7 @@ elif os.getlogin() != self.user:\nOSError: [Errno 25] Inappropriate ioctl for de
 ```
 https://github.com/ansible/ansible-modules-core/pull/4777
 
+* legacy python implementation last update from 2018 and not supporting python3
 
 ## License
 
