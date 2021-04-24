@@ -25,14 +25,8 @@
     state: present
     executable: "{{ ooniprobe_python_pip | default('pip3') }}"
   with_items:
-    - { n: pyasn1, v: 0.4.6 }
-    - { n: pip, v: 9.0.1 }
-- name: Trusty | Install recent setuptools via pip
-  pip:
-    name: setuptools
-    version: 34.0.0
-    state: present
-  when: ansible_distribution_release == 'trusty'
+    - { n: pyasn1, v: 0.4.8 }
+    - { n: pip, v: 21.0.1 }
 
 - name: Install ooniprobe via pip
   pip:
