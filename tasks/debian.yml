@@ -5,6 +5,7 @@
     name:
       - build-essential
       - python3-pip
+      - python3-setuptools
       - python3-dev
       - libgeoip-dev
       - libdumbnet-dev
