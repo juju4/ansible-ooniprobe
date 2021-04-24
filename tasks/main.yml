@@ -35,7 +35,10 @@
   when: ansible_distribution_release == 'trusty'
 
 - name: Install ooniprobe via pip
-  pip: name=ooniprobe state=present
+  pip:
+    name: ooniprobe
+    state: present
+    executable: "{{ ooniprobe_python_pip | default('pip3') }}"
 
 ## centos7 fail: https://github.com/ansible/ansible-modules-core/issues/5109
 - name: add daily task to run ooniprobe
